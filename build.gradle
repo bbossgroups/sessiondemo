@@ -1,0 +1,134 @@
+configure(allprojects) { project ->
+	group = PROJ_GROUP
+	version = PROJ_VERSION
+	 
+	ext.mongodbversion = mongodbversion
+	ext.jacksonversion = jacksonversion
+	apply plugin: "java"
+	apply plugin: "maven-publish"
+	apply plugin: "eclipse"
+	apply plugin: "idea"
+	apply plugin: "signing"
+	apply plugin: "maven"
+	if(project.getProperty('skipTest'))
+	{
+		compileTestJava.enabled=false
+		processTestResources.enabled=false
+		testClasses.enabled = false
+		//test.onlyIf { !project.getProperty('skipTest') } 
+		test.enabled = false  
+	}
+	eclipse {
+		jdt {
+			//if you want to alter the java versions (by default they are configured with gradle java plugin settings):
+			sourceCompatibility = SOURCE_COMPILER_LEVEL
+			targetCompatibility = TARGET_COMPILER_LEVEL
+			javaRuntimeName = "../../org.eclipse.jdt.launching.JRE_CONTAINER"
+
+		}
+	}
+
+	tasks.withType(JavaCompile) {	
+		sourceCompatibility = SOURCE_COMPILER_LEVEL
+		targetCompatibility = TARGET_COMPILER_LEVEL
+		options.encoding = 'UTF-8'
+	}
+
+	tasks.withType(Javadoc) {	
+		sourceCompatibility = JAVADOC_SOURCE_LEVEL
+		targetCompatibility = JAVADOC_COMPILER_LEVEL
+		options.encoding = 'UTF-8'
+		// disable the crazy super-strict doclint tool in Java 8
+        // noinspection SpellCheckingInspection
+		if (JavaVersion.current().isJava8Compatible()) {
+			options.addStringOption('Xdoclint:none', '-quiet')
+		}
+	}
+
+	jar {
+		manifest {
+			attributes (
+					'Implementation': version,
+					'Specification-Version': '',
+					'Implementation-Vendor': '',
+					'Implementation-ProductID': project.name,
+					'Compile-Timestamp': new Date().format('yyyy-MM-dd HH:mm:ss'),
+					'Compile-User': DEVELOPER_NAME
+			)
+		}
+	}
+
+	dependencies {
+		testCompile 'junit:junit:4.12'
+	}
+
+	repositories {
+		mavenLocal()
+	
+		mavenCentral()
+		
+	}
+}
+
+configure(subprojects) { subproject ->
+	task sourcesJar(type: Jar) {
+		classifier = "sources"
+		from sourceSets.main.allJava
+	}
+
+	task javaDocJar(type: Jar, dependsOn: javadoc) {
+		classifier = "javadoc"
+		from javadoc.destinationDir
+	}
+
+	artifacts {
+	    archives sourcesJar, javaDocJar
+	}
+
+	 
+}
+		 
+
+ 
+
+configure([project(":session"),project(":sessionmonitor")]) { subproject ->
+	apply plugin: 'war'    
+	eclipse {
+		jdt {
+			//if you want to alter the java versions (by default they are configured with gradle java plugin settings):
+			sourceCompatibility = 1.7
+			targetCompatibility = 1.7
+			javaRuntimeName = "../../org.eclipse.jdt.launching.JRE_CONTAINER"
+
+		}
+	}
+	
+	/**war {
+	    //from 'WebRoot'
+	    // adds a file-set to the root of the archive
+	    //webInf { from 'WebRoot/WEB-INF' } // adds a file-set to the WEB-INF dir.
+	    //classpath configurations.compile // adds a configuration to the WEB-INF/lib dir.
+	   // webXml = file('WebRoot/WEB-INF/web.xml') // copies a file to WEB-INF/web.xml
+	}*/
+	webAppDirName = 'WebRoot'  
+	publishing {
+		publications {
+			mavenJava(MavenPublication) {
+				from components.java
+				artifact war
+			}
+		}
+		repositories {
+			mavenLocal()
+		}
+	}
+	dependencies {
+	 compileOnly (            
+           
+            [group: 'javax.servlet', name: 'javax.servlet-api', version: "3.0.1", transitive: false],
+            //[group: 'javax.servlet', name: 'jsp-api', version: '2.0', transitive: false],
+            [group: 'javax.servlet.jsp', name: 'javax.servlet.jsp-api', version: '2.3.1', transitive: false],
+          
+    	)
+  }
+}

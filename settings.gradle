@@ -1,0 +1,2 @@
+rootProject.name = 'sessiondemo'
+include "session", "sessionmonitor"

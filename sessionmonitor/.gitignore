@@ -1,0 +1,8 @@
+/bin
+/.settings/
+/.classpath
+/.project
+/build/
+/build.gradle.bak
+/common-mvc.log
+/sessionmonitor.log
