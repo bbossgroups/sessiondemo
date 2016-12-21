@@ -65,7 +65,17 @@
 
 
 					</tr>
+					<tr>
 
+						<th width="150"><strong>enableSessionIDFromParameter:</strong></th>
+						<td width="400"><strong><font color="green"><pg:cell colName="enableSessionIDFromParameter" /></font></strong>。从请求参数中获取sessionid控制开关<br>
+			true 启用,使用cookiename属性对应的值作为传递sessionid的参数名称<br>
+			false 关闭 默认值<br>
+			优先从cookie中获取sessionid，如果从cookie中没有获取sessionid到才需要从参数中获取sessionid		</td>
+
+
+
+					</tr>
 
 					<tr>
 						<th width="150"><strong>配置保存时间:</strong></th>

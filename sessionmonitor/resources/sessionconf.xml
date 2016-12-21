@@ -8,7 +8,14 @@
 			<property name="sessionTimeout" value="3600000"/>
 			<property name="sessionstore" refid="attr:sessionstore"/> 
 			<!-- <property name="sessionstore" value="session"/>-->
-			<property name="cookiename" value="demo_sessionid"/>			
+			<property name="cookiename" value="demo_sessionid"/>	
+			<!-- 
+			enableSessionIDFromParameter:支持以参数方式 传递sessionid控制开关
+			true 启用,使用cookiename属性对应的值作为传递sessionid的参数名称
+			false 关闭 默认值
+			优先从cookie中获取sessionid，如果从cookie中没有获取sessionid到才需要从参数中获取sessionid		
+			-->	
+			<property name="enableSessionIDFromParameter" value="true"/>		
 			<property name="httpOnly" value="true"/>
 			<property name="secure" value="false"/>
 			<property name="lazystore" value="true"/> 
@@ -68,11 +75,21 @@
 			    </property>
 			</property>   
 			 --> 
-			<property name="startLifeScan" value="false"/>  
+			 <!-- 指定失效session销毁线程扫描频率 ，单位：毫秒-->
+			<property name="sessionscaninterval" value="3600000"/>  
+			<!-- 失效session销毁线程开启开关:true 开启， false 关闭 -->
+			<property name="startLifeScan" value="true"/>  
   <property name="sessionlisteners" value="org.frameworkset.security.session.impl.NullSessionListener"/>  
 	</property>
 	
+	<!-- 
 	<property name="sessionStaticManager" f:monitorScope="all" class="org.frameworkset.security.session.statics.MongoSessionStaticManagerImpl"/>	
 	
 	<property name="sessionstore" class="org.frameworkset.security.session.impl.MongDBSessionStore"/>
+	-->
+	
+	
+	<property name="sessionStaticManager" f:monitorScope="all" class="org.frameworkset.security.session.statics.RedisSessionStaticManagerImpl"/>	
+	
+	<property name="sessionstore" class="org.frameworkset.security.session.impl.RedisSessionStore"/>
 </properties>
