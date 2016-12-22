@@ -68,10 +68,43 @@
 					<tr>
 
 						<th width="150"><strong>enableSessionIDFromParameter:</strong></th>
-						<td width="400"><strong><font color="green"><pg:cell colName="enableSessionIDFromParameter" /></font></strong>。从请求参数中获取sessionid控制开关<br>
+						<td width="400"><strong><font color="green"><pg:cell colName="enableSessionIDFromParameter" /></font></strong><br>enableSessionIDFromParameter:支持以参数方式 传递sessionid控制开关
 			true 启用,使用cookiename属性对应的值作为传递sessionid的参数名称<br>
 			false 关闭 默认值<br>
-			优先从cookie中获取sessionid，如果从cookie中没有获取sessionid到才需要从参数中获取sessionid		</td>
+			优先从cookie中获取sessionid，如果从cookie中没有获取sessionid到才需要从参数中获取sessionid	<br>
+			从参数传递的sessionid，必须采用以下方式对sessionid进行加密，才能传递：<br>
+			String sid = SessionUtil.getSessionManager().getSignSessionIDGenerator().sign("d4d6d67bb1e64bb39ee81434add36b59", true);		</td>
+
+
+
+					</tr>
+					<tr>
+
+						<th width="150"><strong>rewriteSessionCookie:</strong></th>
+						<td width="400"><strong><font color="green"><pg:cell colName="rewriteSessionCookie" /></font></strong><br>将从请求参数中获取sessionid写回cookie控制开关，当enableSessionIDFromParameter为true时起作用<br>
+					true 启用,使用cookiename属性将对应的值作为sessionid写回cookie<br>
+					false 关闭 默认值<br>
+				bboss采用增强的sessionid签名校验机制，避免客户端篡改sessionid，为了避免bboss内置的sessionid的签名算法被暴露，请修改默认的signKey		</td>
+
+
+
+					</tr>
+					
+					<tr>
+
+						<th width="150"><strong>signSessionID:</strong></th>
+						<td width="400"><strong><font color="green"><pg:cell colName="signSessionID" /></font></strong><br>是否对sessionid进行加密存入cookiebr
+			 true 加密br
+			 false 不加密，默认值	</td>
+
+
+
+					</tr>
+					
+					<tr>
+
+						<th width="150"><strong>signKey:</strong></th>
+						<td width="400"><strong><font color="green"><pg:cell colName="signKey" /></font></strong><br>sessionid 签名key，signSessionID为true时起作用	</td>
 
 
 
