@@ -73,7 +73,7 @@
 			false 关闭 默认值<br>
 			优先从cookie中获取sessionid，如果从cookie中没有获取sessionid到才需要从参数中获取sessionid	<br>
 			从参数传递的sessionid，必须采用以下方式对sessionid进行加密，才能传递：<br>
-			String sid = SessionUtil.getSessionManager().getSignSessionIDGenerator().sign("d4d6d67bb1e64bb39ee81434add36b59", true);		</td>
+			String sid = SessionUtil.sign("d4d6d67bb1e64bb39ee81434add36b59", true);		</td>
 
 
 
