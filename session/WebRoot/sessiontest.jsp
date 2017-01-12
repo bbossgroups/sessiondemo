@@ -1,3 +1,4 @@
+<%@page import="org.frameworkset.security.session.SessionUtil"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@page import="test.*"%>
 <%
@@ -35,8 +36,12 @@ out.println("sessionmonitor's private attribute:"+privateAttr+"<br>");
 out.println("shared attribute userAccount:"+userAccount+"<br>");
 testVO = (TestVO)session.getAttribute("testVO");
 out.println("attribute testVO:"+testVO.getId()+"<br>");
+String sessionId = session.getId();
+out.println(sessionId);
+//SessionUtil.removeSession(sessionId, request);
+//out.print("request.getSession(false):"+request.getSession(false));
  %>
  
- <a href="http://sessionmonitor.bbossgroups.com" target="demo">session跨域测试</a>
+ <a href="http://127.0.0.1:8081/sessionmonitor/sessiontest.jsp" target="demo">session跨域测试</a>
  <br>
- <a href="http://sessionmonitor.bbossgroups.com/session/sessionManager/sessionManager.page" target="demomonitor">session监控</a>
+ <a href="http://127.0.0.1:8081/sessionmonitor/session/sessionManager/sessionManager.page" target="demomonitor">session监控</a>

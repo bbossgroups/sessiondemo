@@ -42,6 +42,9 @@ session.setAttribute("userAccount", "sessionmonitor 张三");
 userAccount = (String)session.getAttribute("userAccount");
 out.println("after modify shared attribute userAccount:"+userAccount+"<br>");
 out.println("attribute testVO:"+testVO.getId()+"<br>");
+out.println(":"+testVO.getId()+"<br>");
+String sessionId = session.getId();
+out.println(sessionId);
  %>
 <a href="http://sessionmonitor.bbossgroups.com" target="demo">session跨域测试</a>
  <br>
