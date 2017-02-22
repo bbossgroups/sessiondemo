@@ -19,7 +19,7 @@
 			<property name="httpOnly" value="true"/>
 			<property name="secure" value="false"/>
 			<property name="lazystore" value="true"/> 
-			<property name="serialType" value="jvm"/>
+			<property name="serialType" value="bboss"/>
 			<property name="monitorAttributes" ><![CDATA[
 			[
 				{"name":"userAccount","cname":"账号","type":"String","like":true,"enableEmptyValue":true}
@@ -33,7 +33,7 @@
 	 当启用跨域会话共享时，就必须指定appcode
 	 -->
 		
-			<property name="appcode" value="sessionmonitor"/>
+			<property name="appcode" value="sessiondemo"/>
 			<!-- 
 			domain：指定跨域共享的根域，基于该域名的子域名都可以共享session
 			shareSessionAttrs:配置需要在应用间共享的会话数据属性名称，以逗号分隔；如果没有配置shareSessionAttrs属性，则所有的属性都是共享数据 
@@ -51,7 +51,7 @@
 			如果需要共享跟多的会话数据，可以将对应的属性追加到shareSessionAttrs中（以逗号分割），没有出现在shareSessionAttrs中的属性都是私有会话数据（对其他应用不可见）。
 			如果没有指定shareSessionAttrs，则会话数据全部在三个应用间共享。
 			-->
-			<!-- <property name="crossDomain" class="org.frameworkset.security.session.domain.CrossDomain" 
+			<property name="crossDomain" class="org.frameworkset.security.session.domain.CrossDomain" 
 			    f:domain="127.0.0.1"  
 			    f:shareSessionAttrs="userAccount" 
 			    init-method="init">
@@ -74,7 +74,7 @@
 				    </list>
 			    </property>
 			</property>   
-			 --> 
+			  
 			 <!-- 指定失效session销毁线程扫描频率 ，单位：毫秒-->
 			<property name="sessionscaninterval" value="3600000"/>  
 			<!-- 失效session销毁线程开启开关:true 开启， false 关闭 -->
