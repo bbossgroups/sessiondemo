@@ -79,8 +79,7 @@
 			<property name="sessionscaninterval" value="3600000"/>  
 			<!-- 失效session销毁线程开启开关:true 开启， false 关闭 -->
 			<property name="startLifeScan" value="true"/>  
-  <property name="sessionlisteners" value="org.frameworkset.security.session.impl.NullSessionListener"/>  
-	</property>
+  			<property name="sessionlisteners" value="org.frameworkset.security.session.impl.NullSessionListener"/>  
 	
 	<!-- 
 	<property name="sessionStaticManager" f:monitorScope="all" class="org.frameworkset.security.session.statics.MongoSessionStaticManagerImpl"/>	
