@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
-         version="2.4">
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	version="2.4">
 
-    <display-name>Session Share Web Application</display-name>
-	
+	<display-name>Session Share Web Application</display-name>
+
 	<listener>
 		<description><![CDATA[应用销毁监听器：
 		在应用销毁之前调用系统shutdown 回调函数，前提是所有的shutdown回调函数
@@ -29,19 +28,29 @@
 	</description>
 		<listener-class>org.frameworkset.web.listener.ApplicationLifeListener</listener-class>
 	</listener>
-    <filter>
-	    <filter-name>sessionFilter</filter-name>
-	    <filter-class>org.frameworkset.security.session.impl.SessionFilter</filter-class>
-	    
-    </filter>
- 
-	 <filter-mapping>
-	   <filter-name>sessionFilter</filter-name>
-	   <url-pattern>/*</url-pattern>
-	 </filter-mapping>
-	 
-   <welcome-file-list>
-    <welcome-file>sessiontest.jsp</welcome-file>
-  </welcome-file-list>
-  
+	<filter>
+		<filter-name>sessionFilter</filter-name>
+		<filter-class>org.frameworkset.security.session.impl.SessionFilter</filter-class>
+		<init-param>
+			<param-name>excludePatterns</param-name>
+			<param-value>/**/*.js</param-value>
+		</init-param>
+		 
+		<init-param>
+			<param-name>includePatterns</param-name>
+			<param-value>/validateimage</param-value>
+		</init-param>
+
+	</filter>
+
+	<filter-mapping>
+		<filter-name>sessionFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+	<welcome-file-list>
+		<welcome-file>sessiontest.jsp</welcome-file>
+	</welcome-file-list>
+
 </web-app>
