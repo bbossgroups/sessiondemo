@@ -31,14 +31,15 @@
 	<filter>
 		<filter-name>sessionFilter</filter-name>
 		<filter-class>org.frameworkset.security.session.impl.SessionFilter</filter-class>
+		<!-- 配置不需要做session拦截的请求地址模式 -->
 		<init-param>
 			<param-name>excludePatterns</param-name>
-			<param-value>/**/*.js</param-value>
+			<param-value>/**/*.js,/**/*.css,/**/*.gif,/**/*.png</param-value>
 		</init-param>
-		 
+		 <!-- 配置需要特殊拦截session请求地址模式（比如动态生成的图形校验码地址） -->
 		<init-param>
 			<param-name>includePatterns</param-name>
-			<param-value>/validateimage</param-value>
+			<param-value>/validateimage.gif</param-value>
 		</init-param>
 
 	</filter>
