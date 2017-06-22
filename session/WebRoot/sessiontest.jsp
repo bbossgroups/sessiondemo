@@ -7,6 +7,8 @@ if(value == null)
 {
 	session.setAttribute("$a.b.c", "a");
 }
+out.println("session id:"+session.getId());
+out.println("<br>");
 value = (String)session.getAttribute("$a.b.c");
 out.println("$a.b.c:"+value);
 out.println("<br>");
