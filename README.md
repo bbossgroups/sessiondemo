@@ -61,7 +61,7 @@ http://yin-bp.iteye.com/category/327553
 
 如果需要session共享以及session监控管理功能，则整合这个工程中的配置文件和jar包到实际项目中即可 
 
-两个会话共享demo工程整合方法，可以参考文档：
+两个会话共享demo部署参考文档：
 
 http://yin-bp.iteye.com/blog/2087308
 
@@ -73,19 +73,6 @@ cd security
 
 gradle install
 
-构建成功后，先启用gretty插件（注意：第一次构建工程，需要关闭gretty插件，默认关闭）
-
-修改/security/gradle.properties中属性为true，即可启用插件：
-
-enable_gretty=true
-
-然后运行以下指令,启动tomcat和demo应用
-
-cd security
-
-gradle :session:tomcatStart
-
-gradle :sessionmonitor:tomcatStart
 
 运行前请修改session和sessionmonitor两个工程中的mongodb.xml或者redis.xml（根据实际情况二者选其一）
 
