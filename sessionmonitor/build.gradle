@@ -47,7 +47,7 @@ dependencies {
              [group: 'oro', name: 'oro', version: '2.0.8', transitive: false],
               [group: 'redis.clients', name: 'jedis', version: "${jedisversion}", transitive: false],
              [group: 'jstl', name: 'jstl', version: '1.2', transitive: false],
-              [group: 'log4j', name: 'log4j', version: '1.2.16', transitive: false],
+              //[group: 'log4j', name: 'log4j', version: '1.2.16', transitive: false],
              [group: 'org.mongodb', name: 'mongo-java-driver', version: "${mongodbversion}", transitive: false],
     )
      

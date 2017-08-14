@@ -23,6 +23,7 @@ dependencies {
      
     
     compile (
+           	[group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25', transitive: true],
             [group: 'org.ow2.asm', name: 'asm', version: '5.0.3', transitive: false],
             [group: 'com.bbossgroups', name: 'bboss-data', version: "${bboss_version}", transitive: false],
             [group: 'com.bbossgroups', name: 'bboss-core', version: "${bboss_version}", transitive: false],
@@ -37,7 +38,7 @@ dependencies {
              [group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: "${jacksonversion}",transitive: false],
              [group: 'oro', name: 'oro', version: '2.0.8', transitive: false],
             [group: 'redis.clients', name: 'jedis', version: "${jedisversion}", transitive: false],
-              [group: 'log4j', name: 'log4j', version: '1.2.16', transitive: false],
+             // [group: 'log4j', name: 'log4j', version: '1.2.16', transitive: false],
              [group: 'org.mongodb', name: 'mongo-java-driver', version: "${mongodbversion}", transitive: false],
     )
     
