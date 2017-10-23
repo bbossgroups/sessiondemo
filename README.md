@@ -9,9 +9,9 @@ github托管地址：
 
 https://github.com/bbossgroups/security 
 
-svn下载地址 
+开源中国地址 
 
-https://github.com/bbossgroups/security/trunk 
+https://gitee.com/bboss/security
 
 # session操作使用样列(遵循servlet标准规范)：
 
