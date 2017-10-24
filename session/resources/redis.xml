@@ -3,10 +3,8 @@
 	<property name="default" class="org.frameworkset.nosql.redis.RedisDB">
 		
 		<!-- 这里不需要配置destroy-method，因为bboss持久层在jvm退出时会自动调用数据源的close方法 -->
-		<property name="nodes">
-			<list componentType="bean"> 
-				<property class="org.frameworkset.nosql.redis.NodeInfo" f:host="127.0.0.1" f:port="6379"/>
-			</list>
+		<property name="servers">
+			127.0.0.1:6379
 		</property>
 		<!-- single|cluster|shared -->
 		<property name="mode" value="single" />
