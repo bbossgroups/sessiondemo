@@ -30,12 +30,14 @@ testVO = (TestVO)session.getAttribute("testVO");
 testVO.setId("testvoidaaaaa");
 //需要将修改后的对象重新设置到session中否则无法存储最新的testVO到mongodb中
 session.setAttribute("testVO", testVO);
+String userAccount = (String)session.getAttribute("userAccount");//session应用设置的共享会话属性
+out.println("shared attribute userAccount before setAttribute:"+userAccount+"<br>");
 session.setAttribute("userAccount","john");//跨应用共享属性
 out.println("<br>");
 String privateAttr = (String)session.getAttribute("privateAttr");//session应用设置的私有会话属性
-String userAccount = (String)session.getAttribute("userAccount");//session应用设置的共享会话属性
+userAccount = (String)session.getAttribute("userAccount");//session应用设置的共享会话属性
 out.println("sessionmonitor's private attribute:"+privateAttr+"<br>");
-out.println("shared attribute userAccount:"+userAccount+"<br>");
+out.println("shared attribute userAccount after setAttribute:"+userAccount+"<br>");
 testVO = (TestVO)session.getAttribute("testVO");
 out.println("attribute testVO:"+testVO.getId()+"<br>");
 String sessionId = session.getId();
