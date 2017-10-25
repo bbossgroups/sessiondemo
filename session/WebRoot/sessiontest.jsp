@@ -42,10 +42,15 @@ testVO = (TestVO)session.getAttribute("testVO");
 out.println("attribute testVO:"+testVO.getId()+"<br>");
 String sessionId = session.getId();
 out.println(sessionId);
+
+String sid = SessionUtil.getSessionManager().getSignSessionIDGenerator().sign(sessionId, true); 
 //SessionUtil.removeSession(sessionId, request);
 //out.print("request.getSession(false):"+request.getSession(false));
+String params = SessionUtil.getSessionManager().getCookiename()+"="+sid ;
  %>
  
- <a href="http://127.0.0.1:8081/sessionmonitor/sessiontest.jsp" target="demo">session跨域测试</a>
+ <a href="http://127.0.0.1:8082/sessionmonitor/sessiontest.jsp" target="demo">session跨域测试</a>
  <br>
- <a href="http://127.0.0.1:8081/sessionmonitor/session/sessionManager/sessionManager.page" target="demomonitor">session监控</a>
+ <a href="http://127.0.0.1:8082/sessionmonitor/sessiontest.jsp?<%=params %>" target="demo">sessionid跨域测试</a>
+ <br>
+ <a href="http://127.0.0.1:8082/sessionmonitor/session/sessionManager/sessionManager.page" target="demomonitor">session监控</a>

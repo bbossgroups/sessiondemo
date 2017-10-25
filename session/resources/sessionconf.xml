@@ -13,6 +13,11 @@
 			<property name="secure" value="false"/>
 			<property name="lazystore" value="true"/> 
 			<property name="serialType" value="bboss"/>
+			<property name="enableSessionIDFromParameter" value="true"/> 
+		  <property name="rewriteSessionCookie" value="true"/>
+		  <property name="signSessionID" value="false"/>  
+		  <property name="signKey" value="bboss"/>
+			
 			<property name="monitorAttributes" ><![CDATA[
 			[
 				{"name":"userAccount","cname":"账号","type":"String","like":true,"enableEmptyValue":true}

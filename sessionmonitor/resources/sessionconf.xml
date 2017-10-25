@@ -9,17 +9,22 @@
 			<property name="sessionstore" refid="attr:sessionstore"/> 
 			<!-- <property name="sessionstore" value="session"/>-->
 			<property name="cookiename" value="demo_sessionid"/>	
+				
+			<property name="httpOnly" value="true"/>
+			<property name="secure" value="false"/>
+			<property name="lazystore" value="true"/> 
+			<property name="serialType" value="bboss"/>
 			<!-- 
 			enableSessionIDFromParameter:支持以参数方式 传递sessionid控制开关
 			true 启用,使用cookiename属性对应的值作为传递sessionid的参数名称
 			false 关闭 默认值
 			优先从cookie中获取sessionid，如果从cookie中没有获取sessionid到才需要从参数中获取sessionid		
 			-->	
-			<property name="enableSessionIDFromParameter" value="true"/>		
-			<property name="httpOnly" value="true"/>
-			<property name="secure" value="false"/>
-			<property name="lazystore" value="true"/> 
-			<property name="serialType" value="bboss"/>
+			<property name="enableSessionIDFromParameter" value="true"/>	
+			  <property name="rewriteSessionCookie" value="true"/>
+			  <property name="signSessionID" value="false"/>  
+			  <property name="signKey" value="bboss"/>
+			
 			<property name="monitorAttributes" ><![CDATA[
 			[
 				{"name":"userAccount","cname":"账号","type":"String","like":true,"enableEmptyValue":true}
