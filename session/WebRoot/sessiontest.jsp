@@ -43,7 +43,8 @@ out.println("attribute testVO:"+testVO.getId()+"<br>");
 String sessionId = session.getId();
 out.println(sessionId);
 
-String sid = SessionUtil.getSessionManager().getSignSessionIDGenerator().sign(sessionId, true); 
+String sid = SessionUtil.signParameterSessionID(request); 
+sid = SessionUtil.signParameterSessionID(request); //重复签名将返回上次签名的sessionid
 //SessionUtil.removeSession(sessionId, request);
 //out.print("request.getSession(false):"+request.getSession(false));
 String params = SessionUtil.getSessionManager().getCookiename()+"="+sid ;
