@@ -22,7 +22,7 @@
 			-->	
 			<property name="enableSessionIDFromParameter" value="true"/>	
 			  <property name="rewriteSessionCookie" value="true"/>
-			  <property name="signSessionID" value="false"/>  
+			  <property name="signSessionID" value="true"/>  
 			  <property name="signKey" value="bboss"/>
 			
 			<property name="monitorAttributes" ><![CDATA[
