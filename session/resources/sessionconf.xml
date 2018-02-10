@@ -75,8 +75,15 @@
 			<property name="startLifeScan" value="false"/>  
   <property name="sessionlisteners" value="org.frameworkset.security.session.impl.NullSessionListener"/>  
 	</property>
-	
+	<!--
 	<property name="sessionStaticManager" f:monitorScope="all" class="org.frameworkset.security.session.statics.RedisSessionStaticManagerImpl"/>	
 	
-	<property name="sessionstore" class="org.frameworkset.security.session.impl.RedisSessionStore"/>
+	<property name="sessionstore" class="org.frameworkset.security.session.impl.RedisSessionStore"/>-->
+	将sessionconf.xml文件中的session存储组件和统计查询组件为mondodb的实现,修改sessionStaticManager和sessionstore为：
+
+	<property name="sessionStaticManager" class="org.frameworkset.security.session.statics.MongoSessionStaticManagerImpl"/>
+
+	<property name="sessionstore" class="org.frameworkset.security.session.impl.MongDBSessionStore"/>
+
+
 </properties>
