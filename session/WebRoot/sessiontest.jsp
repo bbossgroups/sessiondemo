@@ -5,6 +5,7 @@
 String value = (String)session.getAttribute("$a.b.c");
 if(value == null)
 {
+	session.setMaxInactiveInterval(10);//手动设置会话有效期，单位：秒
 	session.setAttribute("$a.b.c", "a");
 }
 out.println("session id:"+session.getId());
