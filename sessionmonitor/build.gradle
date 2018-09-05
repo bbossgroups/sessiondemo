@@ -34,7 +34,7 @@ dependencies {
             [group: 'com.bbossgroups.security', name: 'bboss-security-web', version: "${BBOSS_SECURITY_VERSION}", transitive: false],
             [group: 'com.bbossgroups.security', name: 'bboss-security-web-inf', version: "${BBOSS_SECURITY_VERSION}", transitive: false],
              [group: 'com.bbossgroups', name: 'bboss-velocity', version: "${bboss_version}", transitive: false],
-              [group: 'com.bbossgroups', name: 'bboss-persistent', version: "${bboss_version}", transitive: false],
+              [group: 'com.bbossgroups', name: 'bboss-persistent', version: "${bboss_version}", transitive: true],
               [group: 'com.bbossgroups', name: 'bboss-taglib', version: "${bboss_version}", transitive: false],
               [group: 'com.bbossgroups', name: 'bboss-htmlparser', version: "${bboss_version}", transitive: false],
                [group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: "${jacksonversion}",transitive: false],
