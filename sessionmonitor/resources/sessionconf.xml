@@ -20,9 +20,9 @@
 			false 关闭 默认值
 			优先从cookie中获取sessionid，如果从cookie中没有获取sessionid到才需要从参数中获取sessionid		
 			-->	
-			<property name="enableSessionIDFromParameter" value="true"/>	
-			  <property name="rewriteSessionCookie" value="true"/>
-			  <property name="signSessionID" value="true"/>  
+			<property name="enableSessionIDFromParameter" value="false"/>	
+			  <property name="rewriteSessionCookie" value="false"/>
+			  <property name="signSessionID" value="false"/>  
 			  <property name="signKey" value="bboss"/>
 			
 			<property name="monitorAttributes" ><![CDATA[
