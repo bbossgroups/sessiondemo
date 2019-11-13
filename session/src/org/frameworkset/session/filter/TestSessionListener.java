@@ -1,4 +1,4 @@
-package test.filter;
+package org.frameworkset.session.filter;
 
 import org.frameworkset.security.session.SessionEvent;
 import org.frameworkset.security.session.SessionListener;

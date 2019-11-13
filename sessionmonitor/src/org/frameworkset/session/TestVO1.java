@@ -1,4 +1,4 @@
-package test;
+package org.frameworkset.session;
 
 public class TestVO1  implements java.io.Serializable{
 	private String name;

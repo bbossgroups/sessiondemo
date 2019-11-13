@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@page import="test.*"%>
+<%@page import="org.frameworkset.session.*"%>
 <%
 String value = (String)session.getAttribute("$a.b.c");
 if(value == null)

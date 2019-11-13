@@ -1,6 +1,6 @@
 <%@page import="org.frameworkset.security.session.SessionUtil"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@page import="test.TestVO,test.TestVO1"%>
+<%@page import="org.frameworkset.session.TestVO,org.frameworkset.session.TestVO1"%>
 <%
 String value = (String)session.getAttribute("$a.b.c");
 if(value == null)

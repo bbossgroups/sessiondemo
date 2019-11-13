@@ -1,13 +1,12 @@
-package test;
+package org.frameworkset.session;
 
-import java.io.IOException;
+import org.frameworkset.security.session.impl.SessionFilter;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-
-import org.frameworkset.security.session.impl.SessionFilter;
+import java.io.IOException;
 
 public class MyFilter extends SessionFilter {
 

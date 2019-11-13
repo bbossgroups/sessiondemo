@@ -1,4 +1,4 @@
-package test;
+package org.frameworkset.session;
 
 public class TestVO {
 	private String id;

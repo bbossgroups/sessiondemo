@@ -1,3 +1,4 @@
+
 sourceSets {
     main {
         java {
@@ -6,19 +7,9 @@ sourceSets {
         resources {
             srcDirs 'resources'
         }
-       
-       
     }
-    test {
-        java {
-            srcDirs 'test'
-        }
-         resources {
-				srcDirs 'test' exclude '**/*.java'
-        }
-        
-    }
-} 
+}
+webAppDirName = 'WebRoot'
 dependencies {
      
     
@@ -30,7 +21,7 @@ dependencies {
             [group: 'com.bbossgroups', name: 'bboss-soa', version: "${bboss_version}", transitive: false],
                [group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: "${jacksonversion}",transitive: false],
              [group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: "${jacksonversion}",transitive: false],
-             [group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "${jacksonversion}",transitive: false],
+             [group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "${jacksondatabaindversion}",transitive: false],
              [group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: "${jacksonversion}",transitive: false],
             
     )
