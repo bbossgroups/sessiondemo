@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@page import="org.frameworkset.session.*"%>
+<%@ page import="java.util.Random" %>
 <%
 String value = (String)session.getAttribute("$a.b.c");
 if(value == null)
@@ -45,6 +46,15 @@ out.println("attribute testVO:"+testVO.getId()+"<br>");
 out.println(":"+testVO.getId()+"<br>");
 String sessionId = session.getId();
 out.println(sessionId);
+	Integer shardNo = (Integer)session.getAttribute("shardNo");
+	if(shardNo == null) {
+		Random random = new Random();
+		shardNo = random.nextInt(2);
+		session.setAttribute("shardNo", shardNo);
+
+	}
+	out.println("<br>shardNo:"+shardNo);
+	out.println("<br>");
  %>
 <a href="http://sessionmonitor.bbossgroups.com" target="demo">session跨域测试</a>
  <br>

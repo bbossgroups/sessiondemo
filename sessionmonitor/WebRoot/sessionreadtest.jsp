@@ -13,10 +13,9 @@ out.println("<br>");
 out.println("<br>");
 out.println("local:"+session.getAttribute("local"));
 
-//下面的功能演示存储一个复杂对象（包含引用关系）到session中，然后读取出来验证对象关系是否正确还原
- 
 
-  
+
+//下面的功能演示存储一个复杂对象（包含引用关系）到session中，然后读取出来验证对象关系是否正确还原
 out.println("<br>");
 String privateAttr = (String)session.getAttribute("privateAttr");//session应用设置的私有会话属性
 out.println("sessionmonitor's private attribute:"+privateAttr+"<br>");  

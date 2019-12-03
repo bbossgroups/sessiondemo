@@ -1,11 +1,15 @@
 package org.frameworkset.session;
 
+import java.util.Random;
+
 public class TestVO implements java.io.Serializable{
 	private String id;
 	private TestVO1 testVO1;
+	public static int random;
 	public TestVO() {
-		// TODO Auto-generated constructor stub
+
 	}
+
 	public TestVO1 getTestVO1() {
 		return testVO1;
 	}
@@ -17,6 +21,15 @@ public class TestVO implements java.io.Serializable{
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public static void main(String[] args){
+		Random random = new Random();
+		System.out.println(random.nextInt(2));
+		System.out.println(random.nextInt(2));
+		System.out.println(random.nextInt(2));
+		System.out.println(random.nextInt(2));
+		System.out.println(random.nextInt(2));
+		System.out.println(random.nextInt(2));
 	}
 
 }
