@@ -11,9 +11,9 @@ sourceSets {
 }
 webAppDirName = 'WebRoot'
 dependencies {
-     
-    
-    compile (
+
+
+	api (
     				
             [group: 'org.ow2.asm', name: 'asm', version: '5.0.3', transitive: false],
             [group: 'com.bbossgroups', name: 'bboss-data', version: "${bboss_version}", transitive: true],

@@ -9,7 +9,7 @@ configure(allprojects) { project ->
 	apply plugin: "eclipse"
 	apply plugin: "idea"
 	apply plugin: "signing"
-	apply plugin: "maven"
+	apply plugin: "java-library"
 	if(project.getProperty('skipTest'))
 	{
 		compileTestJava.enabled=false
@@ -60,13 +60,13 @@ configure(allprojects) { project ->
 	}
 
 	dependencies {
-		testCompile 'junit:junit:4.13.1'
+		testImplementation 'junit:junit:4.13.1'
 	}
 
 	repositories {
 		mavenLocal()
 		 maven {
-	        url "http://maven.aliyun.com/nexus/content/groups/public"
+	        url "https://maven.aliyun.com/nexus/content/groups/public"
 	    }
 		mavenCentral()
 		
@@ -75,17 +75,19 @@ configure(allprojects) { project ->
 
 configure(subprojects) { subproject ->
 	task sourcesJar(type: Jar) {
-		classifier = "sources"
+		archiveClassifier = "sources"
 		from sourceSets.main.allJava
+		duplicatesStrategy = DuplicatesStrategy.INCLUDE
 	}
-
+	processResources {
+		duplicatesStrategy = DuplicatesStrategy.INCLUDE
+	}
 	task javaDocJar(type: Jar, dependsOn: javadoc) {
-		classifier = "javadoc"
+		archiveClassifier = "javadoc"
 		from javadoc.destinationDir
 	}
-
 	artifacts {
-	    archives sourcesJar, javaDocJar
+		archives sourcesJar, javaDocJar
 	}
 
 	 
