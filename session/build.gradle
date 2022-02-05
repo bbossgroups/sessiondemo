@@ -17,6 +17,7 @@ dependencies {
            	[group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25', transitive: true],
             [group: 'org.ow2.asm', name: 'asm', version: '5.0.3', transitive: false],
             [group: 'com.bbossgroups', name: 'bboss-data', version: "${bboss_version}", transitive: true],
+            [group: 'com.bbossgroups', name: 'bboss-persistent', version: "${bboss_version}", transitive: false],
             [group: 'com.bbossgroups.security', name: 'bboss-security', version: "${BBOSS_SECURITY_VERSION}", transitive: false],
             [group: 'com.bbossgroups', name: 'bboss-soa', version: "${bboss_version}", transitive: false],
                [group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: "${jacksonversion}",transitive: false],
