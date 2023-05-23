@@ -4,10 +4,10 @@
 		
 		<!-- 这里不需要配置destroy-method，因为bboss持久层在jvm退出时会自动调用数据源的close方法 -->
 		<property name="servers">
-			10.13.4.15:6359
-			10.13.4.15:6369
-			10.13.4.15:6379
-			10.13.4.15:6389
+			101.13.4.15:6359
+			101.13.4.15:6369
+			101.13.4.15:6379
+			101.13.4.15:6389
 		</property>
 		<!-- single|cluster|shared -->
 		<property name="mode" value="cluster" />
