@@ -5,9 +5,9 @@
 		
 		
 		<property name="serverAddresses" >
-			127.0.0.1:27017
+			192.168.137.1:27017,192.168.137.1:27018,192.168.137.1:27019
 		</property>
-		<property name="option" ></property>
+
 			
 		
 		<property name="writeConcern" value="JOURNAL_SAFE"/>

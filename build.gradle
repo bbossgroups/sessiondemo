@@ -2,7 +2,6 @@ configure(allprojects) { project ->
 	group = PROJ_GROUP
 	version = PROJ_VERSION
 	 
-	ext.mongodbversion = mongodbversion
 	ext.jacksonversion = jacksonversion
 	apply plugin: "java"
 	apply plugin: "maven-publish"
