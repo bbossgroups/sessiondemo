@@ -14,8 +14,12 @@ dependencies {
      
     
     api (
-           	[group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.36', transitive: true],
-            [group: 'org.ow2.asm', name: 'asm', version: '5.0.3', transitive: false],
+           	[group: 'org.slf4j', name: 'slf4j-log4j12', version: '2.0.12', transitive: true],
+            [group: 'org.ow2.asm', name: 'asm', version: '9.6', transitive: false],
+            [group: 'org.ow2.asm', name: 'asm-util', version: '9.6', transitive: false],
+            [group: 'org.ow2.asm', name: 'asm-analysis', version: '9.6', transitive: false],
+            [group: 'org.ow2.asm', name: 'asm-tree', version: '9.6', transitive: false],
+            [group: 'org.ow2.asm', name: 'asm-commons', version: '9.6', transitive: false],
             [group: 'com.bbossgroups', name: 'bboss-data', version: "${PROJ_BBOSS_DATA_VERSION}", transitive: true],
             [group: 'com.bbossgroups', name: 'bboss-persistent', version: "${bboss_version}", transitive: false],
             [group: 'com.bbossgroups.security', name: 'bboss-security', version: "${BBOSS_SECURITY_VERSION}", transitive: false],
