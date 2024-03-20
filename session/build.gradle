@@ -14,7 +14,7 @@ dependencies {
      
     
     api (
-           	[group: 'org.slf4j', name: 'slf4j-log4j12', version: '2.0.12', transitive: true],
+           	[group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.36', transitive: true],
             [group: 'org.ow2.asm', name: 'asm', version: '9.6', transitive: false],
             [group: 'org.ow2.asm', name: 'asm-util', version: '9.6', transitive: false],
             [group: 'org.ow2.asm', name: 'asm-analysis', version: '9.6', transitive: false],
