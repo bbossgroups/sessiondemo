@@ -9,7 +9,9 @@ sourceSets {
         }
     }
 }
-webAppDirName = 'WebRoot'
+war {
+    webAppDirectory = file('WebRoot')
+}
 dependencies {
 
     api(
